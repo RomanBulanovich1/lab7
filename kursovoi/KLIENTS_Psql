@@ -1,0 +1,19 @@
+CREATE OR REPLACE PROCEDURE ADD_KLIENTS (
+  p_ID NUMBER,
+  p_NAZVANIE_FIRMI VARCHAR2,
+  p_KLIENT VARCHAR2,
+  p_BIK VARCHAR2,
+  p_TELEPHONE VARCHAR2,
+  p_ADRES VARCHAR2
+)
+AS
+BEGIN
+  INSERT INTO KLIENTS (ID, NAZVANIE_FIRMI, KLIENT, BIK, TELEPHONE, ADRES)
+  VALUES (p_ID, p_NAZVANIE_FIRMI, p_KLIENT, p_BIK, p_TELEPHONE, p_ADRES);
+END;
+BEGIN
+ADD_KLIENTS (1, 'ООО Бывалый пекарь', 'Буланови Роман Сергеевич', '044525225', '+375 (33) 390-17-12', 'Белградская 1');
+ADD_KLIENTS (2, 'ОАО AMD.by', 'Чернявский Андрей Сергеевич', '044039291', '+375 (29) 890-16-92', 'Белградская 32А');
+ADD_KLIENTS (3, 'ОАО TTN.by', 'Володькин Никифор Дмитриевич', '044030861', '+375 (33) 345-56-45', 'Октябрьская 11');
+END;
+SELECT * FROM KLIENTS;
