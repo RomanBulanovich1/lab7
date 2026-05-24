@@ -1,4 +1,4 @@
-#include "russian_handler.h"
+#include "CommandRegistry.h"
 #include <iostream>
 #include <string>
 
@@ -8,6 +8,7 @@ void handleRussianDifference() {
     cout << "Введите строку из русских символов: ";
     string s;
     getline(cin, s);
+
     for (char c : s) {
         unsigned char u = c;
         bool isRussian = (u >= 192 && u <= 223) || (u >= 224 && u <= 255);
@@ -19,3 +20,5 @@ void handleRussianDifference() {
         }
     }
 }
+
+REGISTER_COMMAND(2, "Разница CP1251 (русские буквы)", handleRussianDifference);
